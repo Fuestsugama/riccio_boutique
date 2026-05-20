@@ -28,7 +28,7 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "majeste",
+        "collection": "majesté",
         "products_to_show": 4,
         "title": "Collection Majesté",
         "heading_size": "h2",
