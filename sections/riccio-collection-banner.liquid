@@ -1,0 +1,77 @@
+<style>
+  .riccio-collection-banner {
+    background: var(--riccio-ivory, #FAFAF8);
+    padding: 9rem 4rem 5.6rem;
+    text-align: center;
+  }
+
+  .riccio-collection-banner__eyebrow {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--riccio-camel, #C8A27A);
+    margin: 0 0 2rem;
+  }
+
+  .riccio-collection-banner__title {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 6.8rem;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.05;
+    color: #1A1714;
+    margin: 0 0 3.2rem;
+    letter-spacing: 0.01em;
+  }
+
+  .riccio-collection-banner__description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+    color: rgba(26, 23, 20, 0.58);
+    max-width: 60rem;
+    margin: 0 auto 3.6rem;
+  }
+
+  .riccio-collection-banner__divider {
+    width: 4.8rem;
+    height: 1px;
+    background: var(--riccio-camel, #C8A27A);
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 749px) {
+    .riccio-collection-banner {
+      padding: 7rem 2.4rem 4.4rem;
+    }
+    .riccio-collection-banner__title {
+      font-size: 4.2rem;
+    }
+  }
+</style>
+
+<div class="riccio-collection-banner">
+  <span class="riccio-collection-banner__eyebrow">Riccio Maison</span>
+  <h1 class="riccio-collection-banner__title">{{ collection.title }}</h1>
+  {%- if collection.description != blank -%}
+    <div class="riccio-collection-banner__description">
+      {{ collection.description }}
+    </div>
+  {%- endif -%}
+  <div class="riccio-collection-banner__divider"></div>
+</div>
+
+{% schema %}
+{
+  "name": "Riccio — Bannière",
+  "tag": "section",
+  "class": "section-riccio-collection-banner",
+  "settings": [],
+  "presets": [{ "name": "Riccio — Bannière" }]
+}
+{% endschema %}
