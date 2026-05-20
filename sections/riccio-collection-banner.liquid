@@ -60,7 +60,7 @@
   <h1 class="riccio-collection-banner__title">{{ collection.title }}</h1>
   {%- if collection.description != blank -%}
     <div class="riccio-collection-banner__description">
-      {{ collection.description }}
+      {{ collection.description | strip_html }}
     </div>
   {%- endif -%}
   <div class="riccio-collection-banner__divider"></div>
