@@ -17,6 +17,10 @@
       "type": "riccio-manifesto",
       "settings": {}
     },
+    "riccio_showcase": {
+      "type": "riccio-products-showcase",
+      "settings": {}
+    },
     "riccio_universes": {
       "type": "riccio-universes",
       "settings": {}
@@ -57,6 +61,7 @@
   "order": [
     "riccio_hero",
     "riccio_manifesto",
+    "riccio_showcase",
     "riccio_universes",
     "riccio_editorial",
     "newsletter"

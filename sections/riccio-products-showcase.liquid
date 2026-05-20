@@ -1,0 +1,186 @@
+<style>
+  .riccio-showcase {
+    background: var(--riccio-ivory, #FAFAF8);
+    padding: 0 0 9rem;
+  }
+
+  .riccio-showcase__hero {
+    width: 100%;
+    overflow: hidden;
+    max-height: 62vh;
+    margin-bottom: 5.6rem;
+  }
+
+  .riccio-showcase__hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    display: block;
+  }
+
+  .riccio-showcase__header {
+    text-align: center;
+    padding: 0 4rem 4.8rem;
+  }
+
+  .riccio-showcase__eyebrow {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--riccio-camel, #C8A27A);
+    margin-bottom: 1.2rem;
+  }
+
+  .riccio-showcase__title {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 3.8rem;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.1;
+    color: #1A1714;
+    margin: 0;
+    letter-spacing: 0.01em;
+  }
+
+  .riccio-showcase__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 2.4rem;
+    padding: 0 6rem;
+  }
+
+  .riccio-showcase__item {
+    text-decoration: none;
+    display: block;
+  }
+
+  .riccio-showcase__media {
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    background: var(--riccio-parchment, #F2EBE0);
+    margin-bottom: 1.8rem;
+  }
+
+  .riccio-showcase__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .riccio-showcase__item:hover .riccio-showcase__media img {
+    transform: scale(1.04);
+  }
+
+  .riccio-showcase__name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.65rem;
+    font-weight: 400;
+    color: #1A1714;
+    margin: 0 0 0.5rem;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+  }
+
+  .riccio-showcase__price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(26, 23, 20, 0.55);
+    letter-spacing: 0.06em;
+    margin: 0;
+  }
+
+  .riccio-showcase__footer {
+    text-align: center;
+    padding-top: 5.6rem;
+  }
+
+  .riccio-showcase__cta {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #1A1714;
+    border-bottom: 1px solid #1A1714;
+    padding-bottom: 0.3rem;
+    transition: opacity 0.2s ease;
+  }
+
+  .riccio-showcase__cta:hover { opacity: 0.45; }
+
+  @media screen and (max-width: 989px) {
+    .riccio-showcase__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem 2.4rem;
+      padding: 0 2.4rem;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .riccio-showcase__hero { max-height: 55vw; }
+    .riccio-showcase__title { font-size: 3rem; }
+    .riccio-showcase__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3.2rem 1.2rem;
+      padding: 0 1.6rem;
+    }
+  }
+</style>
+
+<section class="riccio-showcase">
+  <div class="riccio-showcase__hero">
+    <img
+      src="{{ 'image riccio/image2 (5).jpeg' | asset_url }}"
+      alt="RICCIO MAISON — Nouvelles créations"
+      width="2000" height="1000"
+      loading="lazy"
+    >
+  </div>
+
+  <div class="riccio-showcase__header">
+    <span class="riccio-showcase__eyebrow">Riccio Maison</span>
+    <h2 class="riccio-showcase__title">Nos créations</h2>
+  </div>
+
+  <div class="riccio-showcase__grid">
+    {%- assign featured_products = collections.all.products | where: 'available', true -%}
+    {%- for product in featured_products limit: 4 -%}
+      <a href="{{ product.url }}" class="riccio-showcase__item scroll-trigger animate--fade-in">
+        <div class="riccio-showcase__media">
+          {%- if product.featured_image -%}
+            <img
+              src="{{ product.featured_image | image_url: width: 600 }}"
+              alt="{{ product.featured_image.alt | escape }}"
+              width="600" height="800"
+              loading="lazy"
+            >
+          {%- endif -%}
+        </div>
+        <p class="riccio-showcase__name">{{ product.title | truncate: 45 }}</p>
+        <p class="riccio-showcase__price">{{ product.price | money }}</p>
+      </a>
+    {%- endfor -%}
+  </div>
+
+  <div class="riccio-showcase__footer">
+    <a href="/collections/all" class="riccio-showcase__cta">Voir toutes les créations</a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Riccio — Produits",
+  "tag": "section",
+  "class": "section-riccio-showcase",
+  "settings": [],
+  "presets": [{ "name": "Riccio — Produits" }]
+}
+{% endschema %}

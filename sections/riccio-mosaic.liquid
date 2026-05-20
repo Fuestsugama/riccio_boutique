@@ -1,0 +1,143 @@
+<style>
+  .riccio-mosaic {
+    background: var(--riccio-ivory, #FAFAF8);
+    padding: 0 6rem 9rem;
+  }
+
+  .riccio-mosaic__grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: auto auto;
+    gap: 1.2rem;
+  }
+
+  .riccio-mosaic__item {
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+  }
+
+  .riccio-mosaic__item--main {
+    grid-row: 1 / 3;
+  }
+
+  .riccio-mosaic__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .riccio-mosaic__item:hover img {
+    transform: scale(1.03);
+  }
+
+  .riccio-mosaic__item--main { aspect-ratio: 4 / 5; }
+  .riccio-mosaic__item--small { aspect-ratio: 4 / 3; }
+
+  .riccio-mosaic__caption {
+    text-align: center;
+    padding-top: 3.2rem;
+  }
+
+  .riccio-mosaic__caption-label {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--riccio-camel, #C8A27A);
+    margin-bottom: 1rem;
+  }
+
+  .riccio-mosaic__caption-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    font-style: italic;
+    color: #1A1714;
+    margin: 0 0 2rem;
+    line-height: 1.15;
+  }
+
+  .riccio-mosaic__cta {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #1A1714;
+    border-bottom: 1px solid #1A1714;
+    padding-bottom: 0.3rem;
+    transition: opacity 0.2s ease;
+  }
+
+  .riccio-mosaic__cta:hover { opacity: 0.45; }
+
+  @media screen and (max-width: 989px) {
+    .riccio-mosaic {
+      padding: 0 2.4rem 7rem;
+    }
+    .riccio-mosaic__grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    .riccio-mosaic__item--main {
+      grid-row: auto;
+      aspect-ratio: 4 / 3;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .riccio-mosaic { padding: 0 1.6rem 6rem; }
+    .riccio-mosaic__caption-text { font-size: 2.2rem; }
+  }
+</style>
+
+<section class="riccio-mosaic scroll-trigger animate--fade-in">
+  <div class="riccio-mosaic__grid">
+    <a href="/collections/stressa" class="riccio-mosaic__item riccio-mosaic__item--main">
+      <img
+        src="{{ 'image riccio/image1 (7).jpeg' | asset_url }}"
+        alt="Collection Stressa — Grande panière en cuir tressé"
+        width="1200" height="1500"
+        loading="lazy"
+      >
+    </a>
+    <a href="/collections/majesté" class="riccio-mosaic__item riccio-mosaic__item--small">
+      <img
+        src="{{ 'image riccio/image2.jpeg' | asset_url }}"
+        alt="Collection Majesté — Ensemble thermal"
+        width="800" height="600"
+        loading="lazy"
+      >
+    </a>
+    <a href="/collections/salle-de-bain" class="riccio-mosaic__item riccio-mosaic__item--small">
+      <img
+        src="{{ 'image riccio/image1 (2).jpeg' | asset_url }}"
+        alt="Collection Salle de Bain"
+        width="800" height="600"
+        loading="lazy"
+      >
+    </a>
+  </div>
+
+  <div class="riccio-mosaic__caption">
+    <span class="riccio-mosaic__caption-label">Univers Riccio</span>
+    <p class="riccio-mosaic__caption-text">Le cuir dans tous ses états</p>
+    <a href="/collections/all" class="riccio-mosaic__cta">Explorer les collections</a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Riccio — Mosaïque",
+  "tag": "section",
+  "class": "section-riccio-mosaic",
+  "settings": [],
+  "presets": [{ "name": "Riccio — Mosaïque" }]
+}
+{% endschema %}
