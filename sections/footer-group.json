@@ -25,7 +25,7 @@
           "type": "link_list",
           "name": "COLLECTIONS",
           "settings": {
-            "heading": "<a href=\"/collections/ensemble-salle-de-bain\" title=\"Ensemble salle de bain\">Liens rapides</a>",
+            "heading": "<a href=\"/blogs/actualites\" title=\"Actualités\">SERVICE</a>",
             "menu": "footer"
           }
         },
