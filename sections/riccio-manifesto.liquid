@@ -1,0 +1,85 @@
+<style>
+  .riccio-manifesto {
+    padding: 10rem 4rem;
+    text-align: center;
+    background: var(--riccio-ivory, #FAFAF8);
+  }
+
+  .riccio-manifesto__inner {
+    max-width: 72rem;
+    margin: 0 auto;
+  }
+
+  /* Italic serif title — exactly like Hermès "Sur le départ" */
+  .riccio-manifesto__title {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 5.2rem;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.12;
+    color: #1A1714;
+    margin: 0 0 2.4rem;
+    letter-spacing: 0.01em;
+  }
+
+  .riccio-manifesto__text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1.85;
+    letter-spacing: 0.04em;
+    color: rgba(26, 23, 20, 0.7);
+    max-width: 56rem;
+    margin: 0 auto 3.2rem;
+  }
+
+  /* Hermès-style CTA: small caps, underline, no box */
+  .riccio-manifesto__cta {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #1A1714;
+    border-bottom: 1px solid #1A1714;
+    padding-bottom: 0.3rem;
+    transition: opacity 0.2s ease;
+  }
+
+  .riccio-manifesto__cta:hover {
+    opacity: 0.45;
+  }
+
+  @media screen and (max-width: 749px) {
+    .riccio-manifesto {
+      padding: 7rem 2.4rem;
+    }
+    .riccio-manifesto__title {
+      font-size: 3.6rem;
+    }
+  }
+</style>
+
+<section class="riccio-manifesto scroll-trigger animate--fade-in">
+  <div class="riccio-manifesto__inner">
+    <h2 class="riccio-manifesto__title">L'art de vivre<br>par Riccio</h2>
+    <p class="riccio-manifesto__text">
+      Chaque objet Riccio naît d'une conviction profonde : le quotidien mérite d'être beau.
+      Nos créations en cuir tressé, façonnées avec un soin extrême, transforment les gestes
+      les plus simples en instants d'élégance véritable.
+    </p>
+    <a href="/collections/stressa" class="riccio-manifesto__cta">Explorer la maison</a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Riccio — Manifeste",
+  "tag": "section",
+  "class": "section-riccio-manifesto",
+  "settings": [],
+  "presets": [{ "name": "Riccio — Manifeste" }]
+}
+{% endschema %}

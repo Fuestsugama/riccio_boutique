@@ -1,1 +1,92 @@
-{"sections":{"featured_collection":{"type":"featured-collection","settings":{"collection":"riccio®-collection-majeste","products_to_show":2,"title":"collection majesté","heading_size":"h1","description":"<p>Un ensemble élégant en cuir véritable, conçu pour apporter une touche de raffinement à votre quotidien.<\/p><p>RICCIO® incarne l’équilibre parfait entre design moderne et élégance intemporelle.<\/p>","show_description":false,"description_style":"body","columns_desktop":2,"enable_desktop_slider":false,"full_width":false,"show_view_all":true,"view_all_style":"link","color_scheme":"scheme-4","image_ratio":"square","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":false,"quick_add":"none","columns_mobile":"1","swipe_on_mobile":false,"padding_top":0,"padding_bottom":36}}},"order":["featured_collection"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "riccio_hero": {
+      "type": "riccio-hero",
+      "settings": {}
+    },
+    "riccio_manifesto": {
+      "type": "riccio-manifesto",
+      "settings": {}
+    },
+    "riccio_universes": {
+      "type": "riccio-universes",
+      "settings": {}
+    },
+    "riccio_editorial": {
+      "type": "riccio-editorial",
+      "settings": {}
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "majeste",
+        "products_to_show": 4,
+        "title": "Collection Majesté",
+        "heading_size": "h2",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 4,
+        "enable_desktop_slider": false,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "link",
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "full_width": true,
+        "color_scheme": "scheme-2",
+        "padding_top": 80,
+        "padding_bottom": 80
+      },
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "La lettre de la Maison"
+          }
+        },
+        "paragraph": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Soyez les premiers informés de nos nouvelles collections et des événements exclusifs Riccio Maison.</p>"
+          }
+        },
+        "email_form": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": ["heading", "paragraph", "email_form"]
+    }
+  },
+  "order": [
+    "riccio_hero",
+    "riccio_manifesto",
+    "riccio_universes",
+    "riccio_editorial",
+    "featured_collection",
+    "newsletter"
+  ]
+}

@@ -1,0 +1,117 @@
+<style>
+  /* Hermès editorial module: centered title (italic serif) + text + CTA + full-width image */
+  .riccio-editorial {
+    background: var(--riccio-ivory, #FAFAF8);
+    padding: 8rem 4rem 0;
+  }
+
+  .riccio-editorial__text-block {
+    text-align: center;
+    max-width: 72rem;
+    margin: 0 auto 5.6rem;
+  }
+
+  .riccio-editorial__title {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 5rem;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.12;
+    color: #1A1714;
+    margin: 0 0 2rem;
+    letter-spacing: 0.01em;
+  }
+
+  .riccio-editorial__description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 300;
+    line-height: 1.85;
+    letter-spacing: 0.04em;
+    color: rgba(26, 23, 20, 0.68);
+    max-width: 56rem;
+    margin: 0 auto 2.8rem;
+  }
+
+  /* Hermès CTA style: all caps underline, no box */
+  .riccio-editorial__cta {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #1A1714;
+    border-bottom: 1px solid #1A1714;
+    padding-bottom: 0.3rem;
+    transition: opacity 0.2s ease;
+  }
+
+  .riccio-editorial__cta:hover {
+    opacity: 0.45;
+  }
+
+  /* Full-width image below the text — Hermès style */
+  .riccio-editorial__image {
+    width: 100%;
+    overflow: hidden;
+    max-height: 80vh;
+  }
+
+  .riccio-editorial__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .riccio-editorial:hover .riccio-editorial__image img {
+    transform: scale(1.02);
+  }
+
+  @media screen and (max-width: 749px) {
+    .riccio-editorial {
+      padding: 6rem 2.4rem 0;
+    }
+    .riccio-editorial__title {
+      font-size: 3.6rem;
+    }
+    .riccio-editorial__image {
+      max-height: 60vw;
+    }
+  }
+</style>
+
+<section class="riccio-editorial scroll-trigger animate--fade-in">
+  <div class="riccio-editorial__text-block">
+    <h2 class="riccio-editorial__title">Le savoir-faire<br>du cuir</h2>
+    <p class="riccio-editorial__description">
+      Chaque corbeille naît d'un cuir pleine fleur, sélectionné avec soin et travaillé à la main.
+      Un tressage millimétrique, des rivets en laiton, une rigueur qui ne se voit qu'au toucher.
+    </p>
+    <a href="/collections/stressa" class="riccio-editorial__cta">Découvrir les corbeilles</a>
+  </div>
+
+  <div class="riccio-editorial__image">
+    <img
+      src="{{ 'image riccio/image3 (2).jpeg' | asset_url }}"
+      alt="Corbeille Riccio en cuir camel — intérieur de luxe"
+      loading="lazy"
+      width="2000"
+      height="1200"
+    >
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Riccio — Éditorial",
+  "tag": "section",
+  "class": "section-riccio-editorial",
+  "settings": [],
+  "presets": [{ "name": "Riccio — Éditorial" }]
+}
+{% endschema %}

@@ -1,0 +1,140 @@
+<style>
+  .riccio-universes {
+    background: var(--riccio-ivory, #FAFAF8);
+    padding: 2rem 0 10rem;
+  }
+
+  .riccio-universes__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    padding: 0 4rem;
+  }
+
+  @media screen and (max-width: 989px) {
+    .riccio-universes__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.6rem;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .riccio-universes__grid {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0 1.6rem;
+      gap: 1.2rem;
+    }
+  }
+
+  .riccio-universe-card {
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    padding: 1.6rem;
+  }
+
+  .riccio-universe-card__media {
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    background: var(--riccio-parchment, #F2EBE0);
+  }
+
+  .riccio-universe-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .riccio-universe-card:hover .riccio-universe-card__media img {
+    transform: scale(1.04);
+  }
+
+  .riccio-universe-card__info {
+    padding: 1.6rem 0 0;
+    text-align: left;
+  }
+
+  .riccio-universe-card__name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #1A1714;
+    margin: 0 0 0.3rem;
+  }
+
+  .riccio-universe-card__sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 0.03em;
+    color: rgba(26, 23, 20, 0.5);
+    margin: 0;
+  }
+</style>
+
+<section class="riccio-universes">
+  <div class="riccio-universes__grid">
+
+    <a href="/collections/stressa" class="riccio-universe-card scroll-trigger animate--fade-in">
+      <div class="riccio-universe-card__media">
+        <img src="{{ 'image riccio/image2 (5).jpeg' | asset_url }}"
+             alt="Collection Stressa — Corbeilles en cuir tressé"
+             loading="lazy" width="600" height="800">
+      </div>
+      <div class="riccio-universe-card__info">
+        <p class="riccio-universe-card__name">Collection Stressa</p>
+        <p class="riccio-universe-card__sub">Corbeilles en cuir tressé</p>
+      </div>
+    </a>
+
+    <a href="/collections/majeste" class="riccio-universe-card scroll-trigger animate--fade-in">
+      <div class="riccio-universe-card__media">
+        <img src="{{ 'image riccio/image2.jpeg' | asset_url }}"
+             alt="Collection Majesté — Ensemble thermal"
+             loading="lazy" width="600" height="800">
+      </div>
+      <div class="riccio-universe-card__info">
+        <p class="riccio-universe-card__name">Collection Majesté</p>
+        <p class="riccio-universe-card__sub">Ensemble thermal</p>
+      </div>
+    </a>
+
+    <a href="/collections/salle-de-bain" class="riccio-universe-card scroll-trigger animate--fade-in">
+      <div class="riccio-universe-card__media">
+        <img src="{{ 'image riccio/image1 (2).jpeg' | asset_url }}"
+             alt="Collection Salle de Bain — Accessoires cuir"
+             loading="lazy" width="600" height="800">
+      </div>
+      <div class="riccio-universe-card__info">
+        <p class="riccio-universe-card__name">Salle de Bain</p>
+        <p class="riccio-universe-card__sub">Accessoires en cuir</p>
+      </div>
+    </a>
+
+    <a href="/collections/lumina" class="riccio-universe-card scroll-trigger animate--fade-in">
+      <div class="riccio-universe-card__media">
+        <img src="{{ 'image riccio/image0.jpeg' | asset_url }}"
+             alt="Collection Lumina — Chaises d'extérieur"
+             loading="lazy" width="600" height="800">
+      </div>
+      <div class="riccio-universe-card__info">
+        <p class="riccio-universe-card__name">Lumina</p>
+        <p class="riccio-universe-card__sub">Chaises d'extérieur</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Riccio — Univers",
+  "tag": "section",
+  "class": "section-riccio-universes",
+  "settings": [],
+  "presets": [{ "name": "Riccio — Univers" }]
+}
+{% endschema %}
