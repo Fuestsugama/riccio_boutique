@@ -839,6 +839,26 @@ a.link:hover {
   color: var(--riccio-camel);
 }
 
+/* Hide auto-generated shipping/tax note */
+.product__info-wrapper .tax-note,
+.product__info-wrapper .product__tax,
+.product__tax.caption-with-letter-spacing {
+  display: none !important;
+}
+
+/* Replace with clean luxury shipping message */
+.product__info-wrapper .price::after {
+  content: 'Livraison offerte · Taxes incluses';
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 300;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--riccio-camel, #C8A27A);
+  margin-top: 1rem;
+}
+
 /* Add to cart button */
 .product-form__buttons .button--primary {
   width: 100%;
