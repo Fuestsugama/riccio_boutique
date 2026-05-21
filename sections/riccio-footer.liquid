@@ -1,0 +1,217 @@
+<style>
+  .riccio-footer {
+    background: var(--riccio-ivory, #FAFAF8);
+    border-top: 1px solid rgba(26, 23, 20, 0.1);
+    padding: 7.2rem 6rem 0;
+  }
+
+  .riccio-footer__top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 0 8rem;
+    padding-bottom: 6.4rem;
+    border-bottom: 1px solid rgba(26, 23, 20, 0.08);
+  }
+
+  .riccio-footer__brand-name {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #1A1714;
+    margin: 0 0 1.6rem;
+  }
+
+  .riccio-footer__brand-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 300;
+    line-height: 1.9;
+    letter-spacing: 0.03em;
+    color: rgba(26, 23, 20, 0.5);
+    margin: 0 0 3.2rem;
+    max-width: 32rem;
+  }
+
+  .riccio-footer__col-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #1A1714;
+    margin: 0 0 2.4rem;
+  }
+
+  .riccio-footer__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .riccio-footer__links a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: rgba(26, 23, 20, 0.55);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    line-height: 2.8;
+    display: block;
+    transition: color 0.2s ease;
+  }
+
+  .riccio-footer__links a:hover {
+    color: #1A1714;
+  }
+
+  .riccio-footer__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.8rem 0;
+  }
+
+  .riccio-footer__copyright {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: rgba(26, 23, 20, 0.35);
+    margin: 0;
+  }
+
+  .riccio-footer__legal {
+    display: flex;
+    gap: 3.2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .riccio-footer__legal a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    color: rgba(26, 23, 20, 0.35);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .riccio-footer__legal a:hover {
+    color: rgba(26, 23, 20, 0.65);
+  }
+
+  /* Payment icons */
+  .riccio-footer__payments {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2.4rem;
+  }
+
+  .riccio-footer__payments .icon-payment {
+    width: 3.8rem;
+    height: auto;
+    border-radius: 0;
+    filter: grayscale(100%) opacity(0.45);
+  }
+
+  @media screen and (max-width: 989px) {
+    .riccio-footer {
+      padding: 5.6rem 3.2rem 0;
+    }
+    .riccio-footer__top {
+      grid-template-columns: 1fr 1fr;
+      gap: 4.8rem 4rem;
+    }
+    .riccio-footer__brand-col {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .riccio-footer {
+      padding: 4.8rem 2rem 0;
+    }
+    .riccio-footer__top {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
+    .riccio-footer__bottom {
+      flex-direction: column;
+      gap: 2rem;
+      text-align: center;
+    }
+    .riccio-footer__legal {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+  }
+</style>
+
+<footer class="riccio-footer">
+  <div class="riccio-footer__top">
+
+    <!-- Brand -->
+    <div class="riccio-footer__brand-col">
+      <p class="riccio-footer__brand-name">Riccio Maison</p>
+      <p class="riccio-footer__brand-text">
+        L'élégance au quotidien. Objets en cuir d'exception,
+        façonnés à la main pour sublimer chaque espace de votre intérieur.
+      </p>
+      <div class="riccio-footer__payments">
+        {% for type in shop.enabled_payment_types %}
+          {{ type | payment_type_svg_tag: class: 'icon-payment' }}
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Collections -->
+    <div>
+      <p class="riccio-footer__col-heading">Collections</p>
+      <ul class="riccio-footer__links">
+        <li><a href="/collections/stressa">Collection Stressa</a></li>
+        <li><a href="/collections/majesté">Collection Majesté</a></li>
+        <li><a href="/collections/salle-de-bain">Salle de Bain</a></li>
+        <li><a href="/collections/lumina">Lumina</a></li>
+        <li><a href="/collections/all">Toutes les créations</a></li>
+      </ul>
+    </div>
+
+    <!-- Service -->
+    <div>
+      <p class="riccio-footer__col-heading">Service</p>
+      <ul class="riccio-footer__links">
+        <li><a href="{{ shop.url }}/policies/shipping-policy">Livraison</a></li>
+        <li><a href="{{ shop.url }}/policies/refund-policy">Retours</a></li>
+        <li><a href="{{ shop.url }}/policies/privacy-policy">Confidentialité</a></li>
+        <li><a href="{{ shop.url }}/policies/terms-of-service">Conditions générales</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="riccio-footer__bottom">
+    <p class="riccio-footer__copyright">© {{ 'now' | date: '%Y' }} Riccio Maison</p>
+    <ul class="riccio-footer__legal">
+      <li><a href="{{ shop.url }}/policies/privacy-policy">Politique de confidentialité</a></li>
+      <li><a href="{{ shop.url }}/policies/refund-policy">Remboursement</a></li>
+      <li><a href="{{ shop.url }}/policies/terms-of-service">CGV</a></li>
+    </ul>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Riccio — Pied de page",
+  "tag": "section",
+  "class": "section-riccio-footer",
+  "settings": [],
+  "presets": [{ "name": "Riccio — Pied de page" }]
+}
+{% endschema %}
