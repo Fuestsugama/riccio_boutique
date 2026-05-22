@@ -907,9 +907,9 @@ a.link:hover {
     padding: 1.4rem 1.6rem;
   }
 
-  /* Hero image: shift left on mobile so "RICCIO" text in image isn't cropped */
+  /* Hero image: align left on mobile so "RICCIO" text in image isn't cropped */
   .riccio-hero__media img {
-    object-position: 20% top;
+    object-position: left top;
   }
 
   .title-wrapper .title {
