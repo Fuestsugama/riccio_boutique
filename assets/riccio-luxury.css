@@ -904,7 +904,24 @@ a.link:hover {
   }
 
   .header {
-    padding: 1.6rem 2rem;
+    padding: 1.4rem 1.6rem;
+  }
+
+  /* Fix logo clipped to "CCIO" on mobile */
+  .header__heading {
+    overflow: visible !important;
+    grid-column: 2;
+  }
+
+  .header__heading-link .h2 {
+    font-size: 1.55rem !important;
+    letter-spacing: 0.12em !important;
+    white-space: nowrap;
+  }
+
+  .header__heading-link,
+  .header__heading-logo-wrapper {
+    overflow: visible !important;
   }
 
   .title-wrapper .title {

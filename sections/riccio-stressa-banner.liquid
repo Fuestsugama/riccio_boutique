@@ -1,0 +1,244 @@
+<style>
+  .riccio-stressa-banner {
+    background: var(--riccio-ivory, #FAFAF8);
+    padding: 6.4rem 6rem 8rem;
+  }
+
+  .riccio-stressa-banner__intro {
+    text-align: center;
+    margin-bottom: 6.4rem;
+  }
+
+  .riccio-stressa-banner__eyebrow {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--riccio-camel, #C8A27A);
+    margin-bottom: 1.2rem;
+  }
+
+  .riccio-stressa-banner__title {
+    font-family: 'Cormorant Garamond', 'Georgia', serif;
+    font-size: 5.6rem;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.05;
+    color: #1A1714;
+    margin: 0 0 3.2rem;
+    letter-spacing: 0.01em;
+  }
+
+  .riccio-stressa-banner__desc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+    color: rgba(26, 23, 20, 0.55);
+    max-width: 58rem;
+    margin: 0 auto 3.2rem;
+  }
+
+  .riccio-stressa-banner__divider {
+    width: 4.8rem;
+    height: 1px;
+    background: var(--riccio-camel, #C8A27A);
+    margin: 0 auto;
+  }
+
+  /* Colorway pairs grid */
+  .riccio-stressa-banner__pairs {
+    display: flex;
+    flex-direction: column;
+    gap: 6.4rem;
+  }
+
+  .riccio-stressa-banner__pair {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 1.6rem;
+    align-items: end;
+  }
+
+  .riccio-stressa-banner__pair--reverse {
+    grid-template-columns: 2fr 3fr;
+  }
+
+  .riccio-stressa-banner__pair-images {
+    display: contents;
+  }
+
+  .riccio-stressa-banner__pair--reverse .riccio-stressa-banner__img-large {
+    order: 2;
+  }
+
+  .riccio-stressa-banner__pair--reverse .riccio-stressa-banner__img-small {
+    order: 1;
+  }
+
+  .riccio-stressa-banner__img-large,
+  .riccio-stressa-banner__img-small {
+    overflow: hidden;
+    display: block;
+  }
+
+  .riccio-stressa-banner__img-large { aspect-ratio: 4 / 5; }
+  .riccio-stressa-banner__img-small { aspect-ratio: 3 / 4; }
+
+  .riccio-stressa-banner__img-large img,
+  .riccio-stressa-banner__img-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .riccio-stressa-banner__img-large:hover img,
+  .riccio-stressa-banner__img-small:hover img {
+    transform: scale(1.03);
+  }
+
+  .riccio-stressa-banner__pair-label {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+    margin-top: 2rem;
+  }
+
+  .riccio-stressa-banner__colorway {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(26, 23, 20, 0.45);
+    white-space: nowrap;
+  }
+
+  .riccio-stressa-banner__pair-line {
+    flex: 1;
+    height: 1px;
+    background: rgba(26, 23, 20, 0.1);
+  }
+
+  @media screen and (max-width: 989px) {
+    .riccio-stressa-banner {
+      padding: 4.8rem 2.4rem 6.4rem;
+    }
+    .riccio-stressa-banner__title {
+      font-size: 4rem;
+    }
+    .riccio-stressa-banner__pair,
+    .riccio-stressa-banner__pair--reverse {
+      grid-template-columns: 1fr 1fr;
+    }
+    .riccio-stressa-banner__pair--reverse .riccio-stressa-banner__img-large {
+      order: unset;
+    }
+    .riccio-stressa-banner__pair--reverse .riccio-stressa-banner__img-small {
+      order: unset;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .riccio-stressa-banner { padding: 4rem 1.6rem 5.6rem; }
+    .riccio-stressa-banner__title { font-size: 3.2rem; }
+    .riccio-stressa-banner__pair,
+    .riccio-stressa-banner__pair--reverse {
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+    }
+    .riccio-stressa-banner__pairs { gap: 4rem; }
+  }
+</style>
+
+<div class="riccio-stressa-banner">
+
+  <div class="riccio-stressa-banner__intro">
+    <span class="riccio-stressa-banner__eyebrow">Collection Stressa</span>
+    <h1 class="riccio-stressa-banner__title">{{ collection.title }}</h1>
+    {%- if collection.description != blank -%}
+      <p class="riccio-stressa-banner__desc">{{ collection.description | strip_html }}</p>
+    {%- endif -%}
+    <div class="riccio-stressa-banner__divider"></div>
+  </div>
+
+  <div class="riccio-stressa-banner__pairs">
+
+    <!-- Orange Sellier -->
+    <div>
+      <div class="riccio-stressa-banner__pair">
+        <a href="/collections/stressa?filter=orange" class="riccio-stressa-banner__img-large">
+          <img src="{{ 'image riccio/image0 (8).jpeg' | asset_url }}"
+               alt="Grande panière Orange sellier"
+               width="900" height="1125" loading="lazy">
+        </a>
+        <a href="/collections/stressa?filter=orange" class="riccio-stressa-banner__img-small">
+          <img src="{{ 'image riccio/image0 (9).jpeg' | asset_url }}"
+               alt="Petite panière Orange sellier"
+               width="600" height="800" loading="lazy">
+        </a>
+      </div>
+      <div class="riccio-stressa-banner__pair-label">
+        <span class="riccio-stressa-banner__colorway">Orange Sellier — Grande & Petite</span>
+        <div class="riccio-stressa-banner__pair-line"></div>
+      </div>
+    </div>
+
+    <!-- Marron -->
+    <div>
+      <div class="riccio-stressa-banner__pair riccio-stressa-banner__pair--reverse">
+        <a href="/collections/stressa?filter=marron" class="riccio-stressa-banner__img-small">
+          <img src="{{ 'image riccio/image2 (4).jpeg' | asset_url }}"
+               alt="Petite panière Marron"
+               width="600" height="800" loading="lazy">
+        </a>
+        <a href="/collections/stressa?filter=marron" class="riccio-stressa-banner__img-large">
+          <img src="{{ 'image riccio/image1 (6).jpeg' | asset_url }}"
+               alt="Grande panière Marron"
+               width="900" height="1125" loading="lazy">
+        </a>
+      </div>
+      <div class="riccio-stressa-banner__pair-label">
+        <div class="riccio-stressa-banner__pair-line"></div>
+        <span class="riccio-stressa-banner__colorway">Marron — Grande & Petite</span>
+      </div>
+    </div>
+
+    <!-- Blanc Cassé -->
+    <div>
+      <div class="riccio-stressa-banner__pair">
+        <a href="/collections/stressa?filter=blanc" class="riccio-stressa-banner__img-large">
+          <img src="{{ 'image riccio/image2 (5).jpeg' | asset_url }}"
+               alt="Grande panière Blanc cassé"
+               width="900" height="1125" loading="lazy">
+        </a>
+        <a href="/collections/stressa?filter=blanc" class="riccio-stressa-banner__img-small">
+          <img src="{{ 'image riccio/image0 (7).jpeg' | asset_url }}"
+               alt="Petite panière Blanc cassé"
+               width="600" height="800" loading="lazy">
+        </a>
+      </div>
+      <div class="riccio-stressa-banner__pair-label">
+        <span class="riccio-stressa-banner__colorway">Blanc Cassé — Grande & Petite</span>
+        <div class="riccio-stressa-banner__pair-line"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Riccio — Stressa",
+  "tag": "section",
+  "class": "section-riccio-stressa",
+  "settings": [],
+  "presets": [{ "name": "Riccio — Stressa" }]
+}
+{% endschema %}
