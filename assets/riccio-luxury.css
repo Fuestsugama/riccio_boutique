@@ -903,25 +903,41 @@ a.link:hover {
     padding-right: 2rem;
   }
 
-  .header {
-    padding: 1.4rem 1.6rem;
-  }
-
-  /* Fix logo clipped to "CCIO" on mobile */
-  .header__heading {
-    overflow: visible !important;
-    grid-column: 2;
-  }
-
-  .header__heading-link .h2 {
-    font-size: 1.55rem !important;
-    letter-spacing: 0.12em !important;
-    white-space: nowrap;
-  }
-
+  /* Mobile header — fix "CCIO" logo truncation */
+  .section-header,
+  .header,
+  .header__heading,
   .header__heading-link,
   .header__heading-logo-wrapper {
     overflow: visible !important;
+    clip: auto !important;
+    clip-path: none !important;
+  }
+
+  .header {
+    padding: 1.2rem 1.4rem;
+    grid-template-columns: 44px 1fr 44px !important;
+  }
+
+  .header__heading {
+    grid-column: 2;
+    text-align: center;
+    width: 100%;
+  }
+
+  .header__heading-link {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .header__heading-link .h2 {
+    font-size: 1.2rem !important;
+    letter-spacing: 0.06em !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    display: inline-block !important;
+    max-width: none !important;
   }
 
   .title-wrapper .title {
