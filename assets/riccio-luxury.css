@@ -903,41 +903,13 @@ a.link:hover {
     padding-right: 2rem;
   }
 
-  /* Mobile header — fix "CCIO" logo truncation */
-  .section-header,
-  .header,
-  .header__heading,
-  .header__heading-link,
-  .header__heading-logo-wrapper {
-    overflow: visible !important;
-    clip: auto !important;
-    clip-path: none !important;
-  }
-
   .header {
-    padding: 1.2rem 1.4rem;
-    grid-template-columns: 44px 1fr 44px !important;
+    padding: 1.4rem 1.6rem;
   }
 
-  .header__heading {
-    grid-column: 2;
-    text-align: center;
-    width: 100%;
-  }
-
-  .header__heading-link {
-    display: flex !important;
-    justify-content: center !important;
-    width: 100% !important;
-  }
-
-  .header__heading-link .h2 {
-    font-size: 1.2rem !important;
-    letter-spacing: 0.06em !important;
-    white-space: nowrap !important;
-    overflow: visible !important;
-    display: inline-block !important;
-    max-width: none !important;
+  /* Hero image: shift left on mobile so "RICCIO" text in image isn't cropped */
+  .riccio-hero__media img {
+    object-position: 20% top;
   }
 
   .title-wrapper .title {
